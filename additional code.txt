@@ -1,0 +1,27 @@
+1. Install Java For Ubuntu
+sudo add-apt-repository ppa:openjdk-r/ppa \
+&& sudo apt-get update -q \
+&& sudo apt install -y openjdk-11-jdk
+
+2. Download Blynk Server
+wget https://github.com/blynkkk/blynk-server/releases/download/v0.41.17/server-0.41.17.jar
+
+3. Port Forwading HTTP/S API
+    sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+    sudo iptables -t nat -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-port 9443
+
+4. Setup Mail Untuk Kirim Token
+nano mail.properties
+
+mail.smtp.auth=true
+mail.smtp.starttls.enable=true
+mail.smtp.host=smtp.gmail.com
+mail.smtp.port=587
+mail.smtp.username=EMAIL
+mail.smtp.password=PASSWORD_EMAIL
+
+5. Setting GMAIL Untuk Mengirimkan Pesan 
+https://myaccount.google.com/lesssecureapps
+
+6. Jalankan Blynk
+java -jar server-0.41.17.jar -dataFolder /path
