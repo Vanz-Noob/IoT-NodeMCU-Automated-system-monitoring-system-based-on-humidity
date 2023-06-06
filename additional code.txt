@@ -4,7 +4,7 @@ sudo add-apt-repository ppa:openjdk-r/ppa \
 && sudo apt install -y openjdk-11-jdk
 
 2. Download Blynk Server
-wget https://github.com/blynkkk/blynk-server/releases/download/v0.41.17/server-0.41.17.jar
+wget https://github.com/Peterkn2001/blynk-server/releases/download/v0.41.17/server-0.41.17.jar
 
 3. Port Forwading HTTP/S API
     sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
